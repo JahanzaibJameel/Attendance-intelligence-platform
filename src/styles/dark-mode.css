@@ -1,0 +1,231 @@
+/* Dark Mode CSS Variables and Overrides */
+:root {
+  /* Light mode colors */
+  --bg-primary: 255 255 255;
+  --bg-secondary: 249 250 251;
+  --bg-tertiary: 243 244 246;
+  
+  --text-primary: 17 24 39;
+  --text-secondary: 107 114 128;
+  --text-tertiary: 156 163 175;
+  
+  --border-primary: 229 231 235;
+  --border-secondary: 209 213 219;
+  
+  --surface-0: 255 255 255;
+  --surface-50: 249 250 251;
+  --surface-100: 243 244 246;
+  --surface-200: 229 231 235;
+  --surface-300: 209 213 219;
+  --surface-400: 156 163 175;
+  --surface-500: 107 114 128;
+  --surface-600: 75 85 99;
+  --surface-700: 55 65 81;
+  --surface-800: 31 41 55;
+  --surface-900: 17 24 39;
+  --surface-950: 3 7 18;
+}
+
+.dark {
+  /* Dark mode colors */
+  --bg-primary: 17 24 39;
+  --bg-secondary: 31 41 55;
+  --bg-tertiary: 55 65 81;
+  
+  --text-primary: 243 244 246;
+  --text-secondary: 156 163 175;
+  --text-tertiary: 107 114 128;
+  
+  --border-primary: 55 65 81;
+  --border-secondary: 75 85 99;
+  
+  --surface-0: 17 24 39;
+  --surface-50: 31 41 55;
+  --surface-100: 55 65 81;
+  --surface-200: 75 85 99;
+  --surface-300: 107 114 128;
+  --surface-400: 156 163 175;
+  --surface-500: 209 213 219;
+  --surface-600: 229 231 235;
+  --surface-700: 243 244 246;
+  --surface-800: 249 250 251;
+  --surface-900: 255 255 255;
+  --surface-950: 255 255 255;
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Dark mode specific overrides */
+.dark .glass-effect {
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(55, 65, 81, 0.3);
+}
+
+.dark .glass-effect-light {
+  background: rgba(31, 41, 55, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(75, 85, 99, 0.2);
+}
+
+/* Scrollbar styling for dark mode */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: rgb(var(--surface-800));
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgb(var(--surface-600));
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--surface-500));
+}
+
+/* Form elements dark mode */
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: rgb(var(--surface-800));
+  border-color: rgb(var(--surface-600));
+  color: rgb(var(--text-primary));
+}
+
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus {
+  border-color: rgb(var(--primary-600));
+  box-shadow: 0 0 0 3px rgba(var(--primary-600), 0.1);
+}
+
+/* Button dark mode variations */
+.dark .btn-secondary {
+  background-color: rgb(var(--surface-700));
+  color: rgb(var(--text-primary));
+  border-color: rgb(var(--surface-600));
+}
+
+.dark .btn-secondary:hover {
+  background-color: rgb(var(--surface-600));
+}
+
+/* Card dark mode */
+.dark .card {
+  background-color: rgb(var(--surface-800));
+  border-color: rgb(var(--surface-700));
+}
+
+.dark .card-hover:hover {
+  background-color: rgb(var(--surface-700));
+}
+
+/* Table dark mode */
+.dark table {
+  background-color: rgb(var(--surface-800));
+}
+
+.dark th {
+  background-color: rgb(var(--surface-700));
+  color: rgb(var(--text-primary));
+}
+
+.dark tr:hover {
+  background-color: rgb(var(--surface-700));
+}
+
+/* Modal/Dialog dark mode */
+.dark .modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dark .modal-content {
+  background-color: rgb(var(--surface-800));
+  border-color: rgb(var(--surface-600));
+}
+
+/* Toast notifications dark mode */
+.dark .toast {
+  background-color: rgb(var(--surface-700));
+  color: rgb(var(--text-primary));
+  border-color: rgb(var(--surface-600));
+}
+
+/* Dropdown dark mode */
+.dark .dropdown-content {
+  background-color: rgb(var(--surface-800));
+  border-color: rgb(var(--surface-600));
+}
+
+.dark .dropdown-item:hover {
+  background-color: rgb(var(--surface-700));
+}
+
+/* Sidebar dark mode */
+.dark .sidebar {
+  background-color: rgb(var(--surface-900));
+  border-color: rgb(var(--surface-700));
+}
+
+.dark .sidebar-item:hover {
+  background-color: rgb(var(--surface-800));
+}
+
+.dark .sidebar-item.active {
+  background-color: rgb(var(--primary-900));
+}
+
+/* Navigation dark mode */
+.dark .navbar {
+  background-color: rgb(var(--surface-900));
+  border-color: rgb(var(--surface-700));
+}
+
+/* Chart dark mode */
+.dark .chart-container {
+  background-color: rgb(var(--surface-800));
+}
+
+.dark .chart-grid {
+  stroke: rgb(var(--surface-600));
+}
+
+.dark .chart-text {
+  fill: rgb(var(--text-secondary));
+}
+
+/* Loading states dark mode */
+.dark .skeleton {
+  background: linear-gradient(
+    90deg,
+    rgb(var(--surface-700)) 25%,
+    rgb(var(--surface-600)) 50%,
+    rgb(var(--surface-700)) 75%
+  );
+}
+
+/* Print styles - always use light mode */
+@media print {
+  :root,
+  .dark {
+    --bg-primary: 255 255 255;
+    --bg-secondary: 249 250 251;
+    --bg-tertiary: 243 244 246;
+    
+    --text-primary: 17 24 39;
+    --text-secondary: 107 114 128;
+    --text-tertiary: 156 163 175;
+    
+    --border-primary: 229 231 235;
+    --border-secondary: 209 213 219;
+  }
+}

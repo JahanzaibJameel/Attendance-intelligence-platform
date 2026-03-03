@@ -9,11 +9,13 @@ import './styles/dark-mode.css';
 
 // Layout Components
 import AppRoutes from './routing/AppRoutes';
+import ModernNavigation from './components/layout/ModernNavigation';
 
 // Components
 import { ErrorBoundary as AppErrorBoundary } from './components/error/ErrorBoundary';
 
 // Providers
+import { AppProvider } from './context/AppContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { ResponsiveProvider } from './components/responsive/ResponsiveProvider';
 import { PWAProvider } from './utils/pwa';
@@ -75,40 +77,46 @@ function App() {
   return (
     <AppErrorBoundary FallbackComponent={ErrorFallback}>
       <QueryClientProvider client={queryClient}>
-        <ResponsiveProvider>
-          <PWAProvider>
-            <ThemeProvider>
-              <GamificationProvider userId="current-user">
-                <AnalyticsProvider>
-                  <BulkActionsProvider>
-                    <Router>
-                      <div className="min-h-screen bg-surface-0 dark:bg-surface-950 transition-colors duration-200">
-                        <AppRoutes />
-                      </div>
-                    </Router>
-                    
-                    {/* Global Toast Notifications */}
-                    <Toaster 
-                      position="top-right"
-                      expand={false}
-                      richColors
-                      closeButton
-                      toastOptions={{
-                        style: {
-                          background: 'var(--bg-primary)',
-                          color: 'var(--text-primary)',
-                          border: '1px solid var(--border-primary)',
-                        },
-                      }}
-                    />
-                  </BulkActionsProvider>
-                </AnalyticsProvider>
-              </GamificationProvider>
-            </ThemeProvider>
-          </PWAProvider>
-        </ResponsiveProvider>
+        <AppProvider>
+          <ResponsiveProvider>
+            <PWAProvider>
+              <ThemeProvider>
+                <GamificationProvider userId="current-user">
+                  <AnalyticsProvider>
+                    <BulkActionsProvider>
+                      <Router>
+                        <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-purple-50 dark:from-gray-900 dark:via-slate-900 dark:to-purple-900 transition-colors duration-200">
+                          <ModernNavigation />
+                          <main className="pt-16">
+                            <AppRoutes />
+                          </main>
+                        </div>
+                      </Router>
+
+                      {/* Global Toast Notifications */}
+                      <Toaster 
+                        position="top-right"
+                        expand={false}
+                        richColors
+                        closeButton
+                        toastOptions={{
+                          style: {
+                            background: 'var(--bg-primary)',
+                            color: 'var(--text-primary)',
+                            border: '1px solid var(--border-primary)',
+                          },
+                        }}
+                      />
+                    </BulkActionsProvider>
+                  </AnalyticsProvider>
+                </GamificationProvider>
+              </ThemeProvider>
+            </PWAProvider>
+          </ResponsiveProvider>
+        </AppProvider>
       </QueryClientProvider>
     </AppErrorBoundary>
   );
 }
+
 export default App;

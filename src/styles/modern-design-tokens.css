@@ -1,0 +1,191 @@
+/* Modern 2026 Design System - Enhanced Color Palette */
+
+/* CSS Custom Properties for Dynamic Theming */
+:root {
+  /* === MODERN PRIMARY GRADIENTS === */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --gradient-success: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  --gradient-warning: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  --gradient-danger: linear-gradient(135deg, #f83600 0%, #f9d423 100%);
+  
+  /* === NEON ACCENT COLORS === */
+  --neon-purple: #a855f7;
+  --neon-cyan: #06b6d4;
+  --neon-pink: #ec4899;
+  --neon-green: #10b981;
+  --neon-amber: #f59e0b;
+  --neon-rose: #f43f5e;
+  
+  /* === SOFT LIGHT THEME === */
+  --bg-primary-light: #fafbfc;
+  --bg-secondary-light: #f8fafc;
+  --bg-tertiary-light: #f1f5f9;
+  --surface-light: #ffffff;
+  --surface-elevated-light: #ffffff;
+  --surface-border-light: #e2e8f0;
+  
+  /* === SOFT DARK THEME === */
+  --bg-primary-dark: #0f0f23;
+  --bg-secondary-dark: #1a1a2e;
+  --bg-tertiary-dark: #16213e;
+  --surface-dark: #1e1e2e;
+  --surface-elevated-dark: #2a2a3e;
+  --surface-border-dark: #2a2a4e;
+  
+  /* === TEXT COLORS === */
+  --text-primary-light: #1e293b;
+  --text-secondary-light: #64748b;
+  --text-tertiary-light: #94a3b8;
+  --text-inverse-light: #ffffff;
+  
+  --text-primary-dark: #f8fafc;
+  --text-secondary-dark: #cbd5e1;
+  --text-tertiary-dark: #94a3b8;
+  --text-inverse-dark: #0f0f23;
+  
+  /* === MODERN SHADOWS === */
+  --shadow-soft-light: 0 4px 20px rgba(0, 0, 0, 0.04);
+  --shadow-medium-light: 0 8px 30px rgba(0, 0, 0, 0.08);
+  --shadow-strong-light: 0 16px 40px rgba(0, 0, 0, 0.12);
+  
+  --shadow-soft-dark: 0 4px 20px rgba(0, 0, 0, 0.2);
+  --shadow-medium-dark: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --shadow-strong-dark: 0 16px 40px rgba(0, 0, 0, 0.6);
+  
+  /* === GLOW EFFECTS === */
+  --glow-purple: 0 0 20px rgba(168, 85, 247, 0.3);
+  --glow-cyan: 0 0 20px rgba(6, 182, 212, 0.3);
+  --glow-pink: 0 0 20px rgba(236, 72, 153, 0.3);
+  --glow-green: 0 0 20px rgba(16, 185, 129, 0.3);
+  
+  /* === GRADIENT OVERLAYS === */
+  --gradient-overlay-subtle: linear-gradient(135deg, rgba(168, 85, 247, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%);
+  --gradient-overlay-medium: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+  --gradient-overlay-strong: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%);
+  
+  /* === MODERN TYPOGRAPHY === */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  --font-display: 'Cal Sans', Inter, system-ui, sans-serif;
+  
+  /* === SPACING & SCALE === */
+  --scale-xs: 0.875;
+  --scale-sm: 0.95;
+  --scale-md: 1;
+  --scale-lg: 1.05;
+  --scale-xl: 1.1;
+  
+  /* === BORDER RADIUS === */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+  
+  /* === TRANSITIONS === */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* === DARK MODE OVERRIDES === */
+.dark {
+  --gradient-primary: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  --gradient-secondary: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+  --gradient-accent: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  
+  /* Enhanced neon glows for dark mode */
+  --glow-purple: 0 0 30px rgba(168, 85, 247, 0.5);
+  --glow-cyan: 0 0 30px rgba(6, 182, 212, 0.5);
+  --glow-pink: 0 0 30px rgba(236, 72, 153, 0.5);
+  --glow-green: 0 0 30px rgba(16, 185, 129, 0.5);
+}
+
+/* === MODERN GLASSMORPHISM === */
+.glass-modern {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.dark .glass-modern {
+  background: rgba(15, 15, 35, 0.3);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* === MODERN BUTTON STYLES === */
+.btn-modern {
+  @apply px-6 py-3 font-medium rounded-xl transition-all duration-200 transform hover:scale-105 active:scale-95;
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: var(--shadow-soft-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-modern:hover::before {
+  left: 100%;
+}
+
+.dark .btn-modern {
+  box-shadow: var(--shadow-soft-dark);
+}
+
+/* === MODERN CARD STYLES === */
+.card-modern {
+  @apply rounded-2xl p-6 transition-all duration-300;
+  background: var(--surface-light);
+  border: 1px solid var(--surface-border-light);
+  box-shadow: var(--shadow-soft-light);
+}
+
+.card-modern:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium-light);
+}
+
+.dark .card-modern {
+  background: var(--surface-dark);
+  border-color: var(--surface-border-dark);
+  box-shadow: var(--shadow-soft-dark);
+}
+
+.dark .card-modern:hover {
+  box-shadow: var(--shadow-medium-dark);
+}
+
+/* === ACCESSIBILITY & CONTRAST === */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  :root {
+    --bg-primary-light: #ffffff;
+    --bg-primary-dark: #000000;
+    --text-primary-light: #000000;
+    --text-primary-dark: #ffffff;
+  }
+}

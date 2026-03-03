@@ -88,7 +88,7 @@
 ### **Installation**
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/attendance-intelligence-platform.git
+git clone https://github.com/Jahanzaib/jameel/attendance-intelligence-platform.git
 cd attendance-intelligence-platform
 
 # Install dependencies (all conflicts resolved)

@@ -138,9 +138,9 @@ const LoginPage: React.FC = () => {
           Demo Accounts:
         </p>
         <div className="space-y-1 text-xs text-slate-600 dark:text-slate-400">
-          <div>Admin: admin@example.com</div>
-          <div>Teacher: teacher@example.com</div>
-          <div>Student: student@example.com</div>
+          <div>Admin: admin@example.com (Password: 123456)</div>
+          <div>Teacher: teacher@example.com (Password: 123456)</div>
+          <div>Student: student@example.com (Password: 123456)</div>
         </div>
       </div>
     </motion.div>
